@@ -8,6 +8,7 @@ import (
 	"github.com/slashdoom/aruba_exporter/interfaces"
 	"github.com/slashdoom/aruba_exporter/system"
 	"github.com/slashdoom/aruba_exporter/wireless"
+	"github.com/slashdoom/aruba_exporter/environment"
 )
 
 type collectors struct {
@@ -37,6 +38,7 @@ func (c *collectors) initCollectorsForDevice(device *connector.Device) {
 	c.addCollectorIfEnabledForDevice(device, "system", f.System, system.NewCollector)
 	c.addCollectorIfEnabledForDevice(device, "interfaces", f.Interfaces, interfaces.NewCollector)
     c.addCollectorIfEnabledForDevice(device, "wireless", f.Wireless, wireless.NewCollector)
+	c.addCollectorIfEnabledForDevice(device, "environment", f.Environment, environment.NewCollector)
 }
 
 func (c *collectors) addCollectorIfEnabledForDevice(device *connector.Device, key string, enabled *bool, newCollector func() collector.RPCCollector) {
