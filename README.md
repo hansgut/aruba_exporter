@@ -30,7 +30,7 @@ All metrics are enabled by default. To disable something pass a flag `--<name>.e
 Name     | Description | SwitchOS | OS-CX | InstantAP | Controller |
 ---------|-------------|----------|-------|-----------|------------|
 system | System metrics (version, CPU (% used/idle), memory (total/used/free), uptime) | X | X | X | X |
-environment | Environment metrics (temperatures, state of power supply) | - | - | - | - |
+environment | Environment metrics (temperatures, state of power supply) | X (temp, power, fan) beta | X (temp, power, fan) beta | - | - |
 interfaces | Interfaces metrics (transmitted/received: bytes/packets/errors/drops, admin/oper state) | X | X | X | X |
 optics | Optical signals metrics (tx/rx) | - | - | - | - |
 routes | Router metrics (total, static, dynamic, connected) | - | - | N/A | - |
