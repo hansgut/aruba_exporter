@@ -89,7 +89,7 @@ func (c *environmentCollector) ParseArubaSwitchPower(output string) (map[string]
 	environments := make(map[string]Environment)
 
 	slotRegex := regexp.MustCompile(`^\S+`)
-	statusRegex := regexp.MustCompile(`\s{2,}([a-zA-Z-]+)\s{2,}`)                   // [1]
+	statusRegex := regexp.MustCompile(`\s{2,}([a-zA-Z ]+?)\s{2,}(?:AC|N\/A|\d{1,4}|[a-zA-Z])`)                   // [1]
 	productNumberRegex := regexp.MustCompile(`(?m)^\s*\d+/\d+\s+(\w+|N/A)\s+`)      // [1]
 	serialNumberRegex := regexp.MustCompile(`(?m)^\s*\d+/\d+\s+\w+\s+(\w+|N/A)\s+`) // [1]
 
